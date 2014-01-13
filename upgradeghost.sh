@@ -70,4 +70,4 @@ echo "Removing downloaded files"
 rm -rf $ghostTemp
 echo "...done"
 
-echo "Upgrade complete! You may now start ghost
+echo "Upgrade complete! You may now start ghost"

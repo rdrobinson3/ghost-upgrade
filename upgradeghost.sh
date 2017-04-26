@@ -1,17 +1,17 @@
 #/bin/bash
 ############################
 # updgradeghost.sh
-# This script creates a backup of ghost directories and then performs an upgrade 
+# This script creates a backup of ghost directories and then performs an upgrade
 ############################
 
 ghostDir=~/Documents/PersonalProjects/portfolio-site-ghost-theme/   #working ghost install
 ghostBackupDir=~/Documents/PersonalProjects/backup-portfolio-site-ghost-theme/             # backup directory
 ghostTemp=~/ghostTemp/ #temp directory used to download and extract ghost then removed.
-ghostSource=https://ghost.org/zip/ghost-0.4.0.zip
+ghostSource=https://ghost.org/zip/ghost-latest.zip
 
 timeStamp=$(date +"%Y%m%d%H%M")
 
-# create backup directory 
+# create backup directory
 echo "Creating $ghostBackupDir$timeStamp for backup of any existing files in $ghostDir"
 mkdir -p $ghostBackupDir$timeStamp
 echo "...done"
@@ -21,7 +21,7 @@ echo "Changing to the $ghostDir directory"
 cd $ghostDir
 echo "...done"
 
-# copy any existing themes to backup 
+# copy any existing themes to backup
 echo "Backing up any themes from content/themes to $ghostBackupDir$timeStamp"
 cp -r content/themes $ghostBackupDir$timeStamp
 
@@ -36,7 +36,7 @@ cd $ghostTemp
 wget $ghostSource
 echo "...done"
 echo "Extracting ghost "
-unzip "*.zip" 
+unzip "*.zip"
 echo "...done"
 
 #copy new files into existing install
